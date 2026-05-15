@@ -15,7 +15,7 @@ export default function LancamentosPage() {
   const [modo, setModo] = useState<Modo>('lista');
   const [filtro, setFiltro] = useState<'todos' | 'entrada' | 'debito' | 'credito'>('todos');
   const [sugestao, setSugestao] = useState<LancamentoSugerido | null>(null);
-  const [form, setForm] = useState(formVazio());
+  const [form, setForm] = useState<{ tipo: 'entrada' | 'debito' | 'credito'; descricao: string; valor: string; data: string; categoriaId: string; planejamentoId: string; cartaoId: string; observacao: string }>(formVazio());
   const [salvando, setSalvando] = useState(false);
   const [iaTexto, setIaTexto] = useState('');
   const [iaLoading, setIaLoading] = useState(false);
@@ -37,7 +37,7 @@ export default function LancamentosPage() {
   }, [chat]);
 
   function formVazio() {
-    return { tipo: 'debito' as const, descricao: '', valor: '', data: new Date().toISOString().slice(0, 10), categoriaId: '', planejamentoId: '', cartaoId: '', observacao: '' };
+    return { tipo: 'debito' as 'entrada' | 'debito' | 'credito', descricao: '', valor: '', data: new Date().toISOString().slice(0, 10), categoriaId: '', planejamentoId: '', cartaoId: '', observacao: '' };
   }
 
   const lancamentosFiltrados = (dados?.lancamentos || [])

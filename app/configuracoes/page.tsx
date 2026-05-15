@@ -146,7 +146,7 @@ function SenhaForm() {
 }
 
 function CategoriaEditor({ config, setConfig, salvar }: { config: Config; setConfig: any; salvar: any }) {
-  const [nova, setNova] = useState({ nome: '', tipo: 'despesa' as const, cor: CORES[0], icone: '🛍️' });
+  const [nova, setNova] = useState<{ nome: string; tipo: 'entrada' | 'despesa'; cor: string; icone: string }>({ nome: '', tipo: 'despesa', cor: CORES[0], icone: '🛍️' });
 
   const adicionar = () => {
     if (!nova.nome) return;
@@ -357,7 +357,7 @@ function CartaoEditor({ config, setConfig, salvar }: { config: Config; setConfig
 }
 
 function FixasEditor({ config, setConfig, salvar }: { config: Config; setConfig: any; salvar: any }) {
-  const [nova, setNova] = useState({ nome: '', valor: '', tipo: 'debito' as const, cartaoId: '', categoriaId: '', planejamentoId: '', diaVencimento: '1', parcelamentoTotal: '', parcelamentoMesInicio: new Date().toISOString().slice(0, 7) });
+  const [nova, setNova] = useState<{ nome: string; valor: string; tipo: 'debito' | 'credito'; cartaoId: string; categoriaId: string; planejamentoId: string; diaVencimento: string; parcelamentoTotal: string; parcelamentoMesInicio: string }>({ nome: '', valor: '', tipo: 'debito', cartaoId: '', categoriaId: '', planejamentoId: '', diaVencimento: '1', parcelamentoTotal: '', parcelamentoMesInicio: new Date().toISOString().slice(0, 7) });
 
   const adicionar = () => {
     if (!nova.nome || !nova.valor) return;
