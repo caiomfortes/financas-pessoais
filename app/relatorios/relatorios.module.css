@@ -1,0 +1,82 @@
+.layout { min-height: 100vh; background: var(--bg); }
+.main { padding: 1.25rem 1rem 5rem; max-width: 800px; }
+@media (min-width: 768px) { .main { margin-left: 220px; padding: 2rem; } }
+
+.titulo { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+
+.projecaoCard {
+  background: linear-gradient(135deg, var(--surface), rgba(77,158,255,0.05));
+  border: 1px solid var(--blue-dim);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex; align-items: center; justify-content: space-between;
+  animation: fadeIn 0.3s ease;
+}
+.projecaoInfo {}
+.projecaoLabel { font-size: 0.72rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+.projecaoVal { font-family: var(--font-mono); font-size: 1.5rem; color: var(--blue); margin-bottom: 0.2rem; }
+.projecaoSub { font-size: 0.75rem; color: var(--text3); }
+.projecaoAlerta {
+  font-size: 0.75rem; color: var(--amber);
+  background: var(--amber-dim);
+  border: 1px solid rgba(255,179,71,0.2);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+}
+
+.chartCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.35s ease;
+}
+.chartTitle { font-size: 0.78rem; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.3rem; }
+.chartSub { font-size: 0.72rem; color: var(--text3); margin-bottom: 1rem; }
+
+.mediasGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
+.mediaCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+.mediaLabel { font-size: 0.68rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+.mediaVal { font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 0.2rem; }
+.mediaSub { font-size: 0.68rem; color: var(--text3); }
+.pos { color: var(--green); }
+.neg { color: var(--red); }
+
+.metasGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+@media (min-width: 480px) { .metasGrid { grid-template-columns: repeat(4, 1fr); } }
+.metaCard {
+  background: var(--bg3);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  text-align: center;
+}
+.metaVal { font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 0.3rem; }
+.metaMeses { font-size: 0.75rem; color: var(--accent); font-weight: 500; }
+
+/* Heatmap */
+.heatmap { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.heatmapCell {
+  border-radius: 6px;
+  padding: 0.35rem 0.2rem;
+  text-align: center;
+  min-height: 42px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  cursor: default;
+  transition: transform 0.1s;
+}
+.heatmapCell:hover { transform: scale(1.05); }
+.heatmapDia { font-size: 0.65rem; color: var(--text3); line-height: 1; }
+.heatmapVal { font-size: 0.55rem; color: var(--text2); margin-top: 2px; line-height: 1; }
+
+@media (max-width: 400px) {
+  .mediasGrid { grid-template-columns: 1fr 1fr; }
+  .mediasGrid > :last-child { grid-column: 1 / -1; }
+}

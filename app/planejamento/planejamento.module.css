@@ -1,0 +1,90 @@
+.layout { min-height: 100vh; background: var(--bg); }
+.main { padding: 1.25rem 1rem 5rem; max-width: 800px; }
+@media (min-width: 768px) { .main { margin-left: 220px; padding: 2rem; } }
+
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+.mesNav { display: flex; align-items: center; gap: 0.75rem; }
+.mesNav button { font-size: 1.2rem; color: var(--text2); padding: 0.25rem 0.5rem; }
+.titulo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; }
+
+.scoreCard {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+.scoreInfo { flex: 1; }
+.scoreLabel { font-size: 0.72rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.5rem; }
+.scoreNum {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.scoreDe { font-size: 1rem; color: var(--text3); }
+.scoreSub { font-size: 0.8rem; color: var(--text2); }
+
+.chartCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.35s ease;
+}
+.chartTitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 1.25rem;
+}
+
+.planItem { margin-bottom: 1.1rem; }
+.planItem:last-child { margin-bottom: 0; }
+.planHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.25rem; }
+.planNome { font-size: 0.85rem; font-weight: 500; }
+.planVals { display: flex; align-items: baseline; gap: 0.25rem; font-size: 0.82rem; }
+.planReal { font-family: var(--font-mono); font-weight: 500; }
+.planSep { color: var(--text3); }
+.planPlanejado { font-family: var(--font-mono); color: var(--text3); }
+.planBadge {
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+.planBadgeGreen { background: var(--green-dim); color: var(--green); }
+.planBadgeAmber { background: var(--amber-dim); color: var(--amber); }
+.planBadgeRed { background: var(--red-dim); color: var(--red); }
+.planBarContainer { display: flex; align-items: center; gap: 0.75rem; }
+.planBarTrack { flex: 1; height: 8px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
+.planBarFill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+.planPct { font-size: 0.68rem; color: var(--text3); white-space: nowrap; }
+
+/* Treemap */
+.treemap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 100px;
+}
+.treemapItem {
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: flex; flex-direction: column;
+  min-height: 80px;
+  transition: transform 0.15s;
+  cursor: default;
+}
+.treemapItem:hover { transform: scale(1.02); }
+.treemapIcon { font-size: 1.2rem; margin-bottom: 0.25rem; }
+.treemapNome { font-size: 0.72rem; color: var(--text2); margin-bottom: 0.25rem; }
+.treemapVal { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 400; }
+.treemapPct { font-size: 0.65rem; color: var(--text3); margin-top: 0.1rem; }

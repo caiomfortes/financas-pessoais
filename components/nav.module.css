@@ -1,0 +1,105 @@
+/* ── Sidebar desktop ── */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 220px;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    padding: 1.5rem 0.75rem;
+    z-index: 100;
+  }
+}
+
+.logo {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0 0.5rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+.logoIcon {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+.logoText {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.sidebarItem {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text2);
+  transition: all 0.15s;
+}
+.sidebarItem:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+.sidebarItem.active {
+  background: var(--green-dim);
+  color: var(--accent);
+}
+
+.itemIcon { font-size: 1rem; width: 20px; text-align: center; }
+.itemLabel { font-size: 0.85rem; }
+
+.sidebarFooter {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.logoutBtn {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  font-size: 0.82rem;
+  color: var(--text3);
+  border-radius: 8px;
+  transition: all 0.15s;
+}
+.logoutBtn:hover { background: var(--red-dim); color: var(--red); }
+
+/* ── Bottom nav mobile ── */
+.bottomNav {
+  display: flex;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 68px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+@media (min-width: 768px) {
+  .bottomNav { display: none; }
+}
+
+.bottomItem {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  flex: 1;
+  padding: 0.5rem 0;
+  color: var(--text3);
+  transition: color 0.15s;
+}
+.bottomItem.active { color: var(--accent); }
+
+.bottomIcon { font-size: 1.2rem; line-height: 1; }
+.bottomLabel { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.03em; }

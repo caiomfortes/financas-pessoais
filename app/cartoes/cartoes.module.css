@@ -1,0 +1,93 @@
+.layout { min-height: 100vh; background: var(--bg); }
+.main { padding: 1.25rem 1rem 5rem; max-width: 800px; }
+@media (min-width: 768px) { .main { margin-left: 220px; padding: 2rem; } }
+
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+.mesNav { display: flex; align-items: center; gap: 0.75rem; }
+.mesNav button { font-size: 1.2rem; color: var(--text2); padding: 0.25rem 0.5rem; }
+.titulo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; }
+
+.cartoesGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+
+.cartaoCard {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--cor) 30%, #1a1a2e), color-mix(in srgb, var(--cor) 15%, #0d0d1a));
+  border: 1px solid color-mix(in srgb, var(--cor) 30%, transparent);
+  border-radius: 16px;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+.cartaoCard::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--cor) 20%, transparent) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cartaoTop { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.25rem; }
+.cartaoBandeira { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+.cartaoNome { font-size: 1rem; font-weight: 600; }
+.cartaoChip { font-size: 1.5rem; color: color-mix(in srgb, var(--cor) 80%, white); opacity: 0.6; }
+
+.cartaoInfo { display: flex; gap: 1.5rem; margin-bottom: 0.75rem; }
+.cartaoLabel { font-size: 0.65rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+.cartaoVal { font-family: var(--font-mono); font-size: 0.95rem; }
+
+.cartaoBar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; margin-bottom: 0.75rem; }
+.cartaoBarFill { height: 100%; border-radius: 2px; transition: width 0.5s ease; }
+
+.cartaoFooter { display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+.btnDetalhe { font-size: 0.72rem; color: rgba(255,255,255,0.6); transition: color 0.15s; }
+.btnDetalhe:hover { color: white; }
+
+.detalheList {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; flex-direction: column; gap: 0.4rem;
+}
+.detalheItem { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; }
+.detalheIcon { font-size: 0.9rem; }
+.detalheDesc { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.detalheData { color: rgba(255,255,255,0.4); font-size: 0.7rem; }
+.detalheVal { font-family: var(--font-mono); font-size: 0.8rem; }
+.detalheTotalRow {
+  display: flex; justify-content: space-between;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.secao { margin-top: 0.5rem; }
+.secaoTitulo { font-size: 0.72rem; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.75rem; }
+
+.faturaItem {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.4rem;
+}
+.faturaPaga { opacity: 0.5; }
+.faturaInfo { display: flex; flex-direction: column; gap: 0.15rem; }
+.faturaCartao { font-size: 0.9rem; font-weight: 500; }
+.faturaAcoes {}
+.faturaTag { font-size: 0.75rem; color: var(--green); }
+.btnPagar {
+  padding: 0.35rem 0.85rem;
+  background: var(--green-dim);
+  color: var(--accent);
+  border: 1px solid rgba(0,214,143,0.2);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.btnPagar:hover { background: rgba(0,214,143,0.2); }
+
+.vazio { text-align: center; color: var(--text3); font-size: 0.88rem; padding: 2rem 0; }
