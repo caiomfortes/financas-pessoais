@@ -151,4 +151,5 @@ export interface LancamentoSugerido {
   planejamentoId?: string;
   cartaoId?: string;
   observacao?: string;
+  confianca?: 'alta' | 'media' | 'baixa';
 }
