@@ -141,3 +141,35 @@ export function projetarMes(lancamentos: Lancamento[], mes: string): number {
 export function uid(): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 }
+
+// Calcula o saldo final de um mês dado seus lançamentos e reajuste
+// (sem depender de saldo anterior — soma simples das movimentações do mês)
+export function calcularSaldoMes(dados: DadosMes): number {
+  const entradas = dados.lancamentos.filter(l => l.tipo === 'entrada').reduce((s, l) => s + l.valor, 0);
+  const saidas = dados.lancamentos.filter(l => l.tipo === 'debito').reduce((s, l) => s + l.valor, 0);
+  const reajuste = dados.reajuste?.valor ?? 0;
+  return entradas - saidas + reajuste;
+}
+
+// Busca o saldo acumulado até o início de um determinado mês
+// percorrendo todos os meses desde mesInicio até o mês anterior ao pedido
+export async function calcularSaldoAcumulado(mesPedido: string, mesInicio: string): Promise<number> {
+  let saldo = 0;
+  let cur = mesInicio;
+
+  while (cur < mesPedido) {
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SITE_URL || ''}/api/lancamentos?mes=${cur}`,
+        { cache: 'no-store' }
+      );
+      if (res.ok) {
+        const dados: DadosMes = await res.json();
+        saldo += calcularSaldoMes(dados);
+      }
+    } catch { /* mês sem dados — contribui 0 */ }
+    cur = mesProximo(cur);
+  }
+
+  return saldo;
+}

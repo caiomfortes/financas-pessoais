@@ -23,6 +23,20 @@
 .greeting { font-size: 0.85rem; color: var(--text2); margin-bottom: 0.2rem; }
 .titulo { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.03em; }
 
+.headerAcoes { display: flex; align-items: center; gap: 0.5rem; }
+
+.btnReajuste {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.btnReajuste:hover { border-color: var(--amber); color: var(--amber); background: var(--amber-dim); }
+
 /* Score badge */
 .scoreBadge {
   display: flex; flex-direction: column; align-items: center;
@@ -96,6 +110,35 @@
   transition: width 0.5s ease;
 }
 .progressLabel { font-size: 0.65rem; color: var(--text3); white-space: nowrap; }
+
+.saldoDetalhe { display: flex; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.saldoDetalheItem { font-size: 0.72rem; color: var(--text3); }
+
+.reajusteBadge {
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  color: var(--amber);
+  background: var(--amber-dim);
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+}
+
+.btnNovoLanc {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background: var(--green-dim);
+  border: 1px dashed rgba(0,214,143,0.35);
+  border-radius: var(--radius);
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+  transition: all 0.15s;
+}
+.btnNovoLanc:hover { background: rgba(0,214,143,0.2); border-style: solid; }
 
 /* Chart cards */
 .chartCard {
@@ -186,3 +229,27 @@
 .lancMeta { font-size: 0.72rem; color: var(--text3); }
 .lancVal { font-family: var(--font-mono); font-size: 0.88rem; white-space: nowrap; }
 .vazio { font-size: 0.85rem; color: var(--text3); text-align: center; padding: 1rem 0; }
+
+/* Modais */
+.modalHeader { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.25rem 0; margin-bottom: 1rem; }
+.modalTitulo { font-size: 1rem; font-weight: 700; }
+.modalClose { font-size: 1.3rem; color: var(--text3); padding: 0.1rem 0.4rem; border-radius: 6px; transition: color 0.15s; }
+.modalClose:hover { color: var(--text); }
+.modalBody { padding: 0 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0; }
+
+.tipoRow { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.tipoBtn { flex: 1; padding: 0.5rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; font-size: 0.78rem; font-weight: 500; color: var(--text2); transition: all 0.15s; }
+.tipoBtnAtivo { background: var(--surface2); }
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-bottom: 1rem; }
+.formGrupo { display: flex; flex-direction: column; gap: 0.3rem; }
+.label { font-size: 0.72rem; color: var(--text3); }
+.input { width: 100%; padding: 0.6rem 0.85rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.88rem; outline: none; transition: border-color 0.15s; font-family: inherit; }
+.input:focus { border-color: var(--accent); }
+.btnSalvar { width: 100%; padding: 0.8rem; background: var(--accent); color: #000; border-radius: 8px; font-size: 0.9rem; font-weight: 700; font-family: var(--font-display); transition: opacity 0.15s; display: flex; align-items: center; justify-content: center; }
+.btnSalvar:hover:not(:disabled) { opacity: 0.85; }
+.btnSalvar:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.reajusteInfo { font-size: 0.82rem; color: var(--text2); line-height: 1.5; margin-bottom: 1rem; padding: 0.75rem; background: var(--amber-dim); border-radius: 8px; border: 1px solid rgba(255,179,71,0.2); }
+.reajusteAcoes { display: flex; gap: 0.5rem; margin-top: 1rem; }
+.btnRemover { padding: 0.8rem 1rem; background: var(--red-dim); border: 1px solid rgba(255,77,109,0.2); color: var(--red); border-radius: 8px; font-size: 0.85rem; font-weight: 600; font-family: var(--font-display); white-space: nowrap; transition: all 0.15s; }
+.btnRemover:hover { background: rgba(255,77,109,0.2); }
